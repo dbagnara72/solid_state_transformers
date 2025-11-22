@@ -1,11 +1,12 @@
 # Solid state transformers
 
-This repo contains a collection of simscape models concerning SST. 
+This repo contains a collection of simscape models concerning different configuration of SSTs. 
 
 **How to use the repo**:
-- In matlab add to the path/with-subfolders the repo "library". This repo contains all fundamentals simscape (ssc) models compiled with "ssc_bultd".
-- The folder ./library/user_defined_functions/ccaller contains a list of c-coded functions used inside the simulink models by ccallers.
-- The folder ./library/foundation contains all simscape language based model used in the simulink models.
+- Add to matlab **path/with-subfolders** the repo **library**. This repo contains all fundamentals simscape (ssc) models compiled with "ssc_bultd".
+    - The folder ./library/user_defined_functions/ccaller contains a list of c-coded functions used inside the simulink models by ccallers.
+    - The folder ./library/foundation contains all simscape language based model used in the simulink models.
+    - The folder ./library/documentations contains documentation for most of the applications available on **modelization-and-control** and **solid_state_transformers** repos.
 
  # Documentation
 Documentation is available into the **library** repository.
@@ -24,6 +25,18 @@ to implement effects on local time sliding.
 **theory analysis solid state transformer**:
 Investigantion on different SST architectures:
 
+**module**: *module* menas a block composed by an galvanically insolated DC/DC followed by a single phase inverter.
+
+**folder**: *sst_single_phase_dab_single_phase_inv*: contains a two modules series/parallel based on single phase DAB and single phase inverted based on a full bridge (H-bridge).
+**folder**: *sst_single_phase_dab_single_phase_npc_inv*: contains a two modules series/parallel based on single phase DAB and single phase inverted based on a three level NPC full bridge (H-bridge).
+
+**folder**: *sst_single_phase_LLC_single_phase_npc_inv*: contains a two modules series/parallel based on single phase LLC and single phase inverted based on a three level NPC full bridge (H-bridge).
+
+**folder**: *sst_three_phase_dab_single_phase_inv*: contains a two modules series/parallel based on three phase DAB and single phase inverted based on a full bridge (H-bridge).
+**folder**: *sst_three_phase_dab_single_phase_npc_inv*: contains a two modules series/parallel based on three phase DAB and single phase inverted based on a three level NPC full bridge (H-bridge).
+
+**Remark**: LLC is kept at the frequency which ensure ZCS, power flow is controlled by phase shift between primary/secondary H-bridges.
+
 - three phase DAB: very high efficiency on both semiconductor and magnetics, and high controllability, fundamental of the three phase at 4kHz;  
 - single phase LLC: very high efficiency on semiconductor, magnetic run at 9.6kHz;  
 - single phase DAB: high power loss on semiconductors;
@@ -35,12 +48,3 @@ Investigantion on different SST architectures:
 - n-independent time domains;
 
 Improvements: LV DC grid at 800V, high voltage AC component at 3.3kV;
-
-**theory analysis dab**:
-- Two batteries connected among them by a DAB. This model is intended for deep DAB analysis in term of modulation strategies and efficiency analysis. The model contains a detailed Mosfet model.
-
-**theory analysis resonant LLC**:
-- Two batteries connected among them by an LLC. This model is intended for deep resonant-LLC analysis in term of modulation strategies and efficiency analysis. The model contains a detailed Mosfet model.
-
-**single phase inverter**:
-- Single phase inverter application with resonant pi, and system identification.
