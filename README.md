@@ -38,13 +38,14 @@ Investigantion on different SST architectures:
 **Remark**: LLC is kept at the frequency which ensure ZCS, power flow is controlled by phase shift between primary/secondary H-bridges.
 
 - three phase DAB: very high efficiency on both semiconductor and magnetics, and high controllability, fundamental of the three phase at 4kHz;  
-- single phase LLC: very high efficiency on semiconductor, magnetic run at 9.6kHz;  
-- single phase DAB: high power loss on semiconductors;
+- single phase LLC: very high efficiency on semiconductor applying DCM that means ZCS, but controllability a little poor, magnetics run at 9.6kHz;  
+- single phase DAB: very high efficiency on semiconductor wirth proper deat-time that enables ZVS on turn-on, very high controllability, magnetics run at 9.6kHz;
 
-- model implements two dab connected in parallel at battery side (1.5kV);
+- model implements two dab connected in parallel at battery side (1.25kV);
+- output voltage of the iso DC/DC is 1.5kV;
 - each dab supplies a single phase inverter (400Vac);
 - single phase inverters are connected in series (800Vac per phase);
 - hw and sw implementation;
 - n-independent time domains;
 
-Improvements: LV DC grid at 800V, high voltage AC component at 3.3kV;
+Improvements (maybe): LV DC grid at 800V, high voltage AC component at 3.3kV;
