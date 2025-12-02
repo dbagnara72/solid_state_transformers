@@ -10,7 +10,7 @@ colore3 = [0.75 0.75 0.75];
 time_offset = 0.0;
 t1c = time_tc_sim(end) - Nc*tc/2000 - time_offset;
 t2c = time_tc_sim(end) - time_offset;
-t1s = time_ts_dab_sim(end) - Ns_dab*ts_dab/2;
+t1s = time_ts_dab_sim(end) - Ns_dab*ts_dab/10;
 t2s = time_ts_dab_sim(end);
 t3s = time_ts_dab_sim(end) - Ns_dab*ts_dab/10;
 t4s = time_ts_dab_sim(end);
@@ -35,7 +35,7 @@ ax = gca;
 ax.YColor = [0.5 0.5 0.5]; 
 plot(time_tc_sim,dab_voltage_output_modA_sim,'-','LineWidth',tratto2,'Color',colore2);
 ylabel('$u/V$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[800 1650]);
+% set(gca,'ylim',[800 1650]);
 hold off
 title('DAB output current and voltage','Interpreter','latex','FontSize',fontsize_plotting);
 legend('$i_{2}^{dc}$','$u_{2}^{dc}$','Location','northwestoutside',...
@@ -55,7 +55,7 @@ ax = gca;
 ax.YColor = [0.5 0.5 0.5]; 
 plot(time_tc_sim,dab_voltage_input_modA_sim,'-','LineWidth',tratto2,'Color',colore2);
 ylabel('$u/V$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[1200 1400]);
+% set(gca,'ylim',[1200 1400]);
 hold off
 title('DAB input current and voltage','Interpreter','latex','FontSize',fontsize_plotting);
 legend('$i_{1}^{dc}$','$u_{1}^{dc}$','Location','northwestoutside',...
@@ -77,13 +77,13 @@ yyaxis left;
 plot(time_tc_sim,i2_dab_transformer_modA_sim,'-','LineWidth',tratto1,'Color',colore1);
 ylabel('$i/A$','Interpreter','latex','FontSize', fontsize_plotting);
 hold on
-set(gca,'ylim',[-1000 1000]);
+% set(gca,'ylim',[-1000 1000]);
 yyaxis right;
 ax = gca;
 ax.YColor = [0.5 0.5 0.5]; 
 plot(time_tc_sim,u2_dab_transformer_modA_sim,'-','LineWidth',tratto2,'Color',colore2);
 ylabel('$u/V$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[-1650 1650]);
+% set(gca,'ylim',[-1650 1650]);
 hold off
 title('Transformer-DAB: secondary side current and voltage','Interpreter','latex','FontSize',fontsize_plotting);
 legend('$i_{2}^{ac}$','$u_{2}^{ac}$','Location','northwestoutside',...
@@ -103,7 +103,7 @@ ax = gca;
 ax.YColor = [0.5 0.5 0.5]; 
 plot(time_tc_sim,u1_dab_transformer_modA_sim,'-','LineWidth',tratto2,'Color',colore2);
 ylabel('$u/V$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[-1650 1650]);
+% set(gca,'ylim',[-1650 1650]);
 hold off
 title('Transformer-DAB: primary side current and voltage','Interpreter','latex','FontSize',fontsize_plotting);
 legend('$i_{1}^{ac}$','$u_{1}^{ac}$','Location','northwestoutside',...
@@ -125,13 +125,13 @@ yyaxis left;
 plot(time_tc_sim,current_battery_sim,'-','LineWidth',tratto1,'Color',colore1);
 ylabel('$i/A$','Interpreter','latex','FontSize', fontsize_plotting);
 hold on
-set(gca,'ylim',[-800 -200]);
+% set(gca,'ylim',[-800 -200]);
 yyaxis right;
 ax = gca;
 ax.YColor = [0.5 0.5 0.5]; 
 plot(time_tc_sim,voltage_battery_sim,'-','LineWidth',tratto2,'Color',colore2);
 ylabel('$u/V$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[1300 1360]);
+% set(gca,'ylim',[1300 1360]);
 hold off
 title('DC grid (battery) current and voltage','Interpreter','latex','FontSize',fontsize_plotting);
 legend('$i_{g}^{dc}$','$u_{g}^{dc}$','Location','northwestoutside',...
@@ -151,7 +151,7 @@ ax = gca;
 ax.YColor = [0.5 0.5 0.5]; 
 plot(time_tc_sim,ac_grid_voltage_sim,'-','LineWidth',tratto2,'Color',colore2);
 ylabel('$u/V$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[-1650 1650]);
+% set(gca,'ylim',[-1650 1650]);
 hold off
 title('AC grid current and voltage - phase U','Interpreter','latex','FontSize',fontsize_plotting);
 legend('$i_{gu}^{ac}$','$u_{gu}^{ac}$','Location','northwestoutside',...
@@ -174,13 +174,13 @@ yyaxis left;
 plot(time_tc_sim,is_inv_modA_sim,'-','LineWidth',tratto1,'Color',colore1);
 ylabel('$i/A$','Interpreter','latex','FontSize', fontsize_plotting);
 hold on
-set(gca,'ylim',[-1600 1600]);
+% set(gca,'ylim',[-1600 1600]);
 yyaxis right;
 ax = gca;
 ax.YColor = [0.5 0.5 0.5]; 
 plot(time_tc_sim,us_inv_modA_sim,'-','LineWidth',tratto2,'Color',colore2);
 ylabel('$u/V$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[-1000 1000]);
+% set(gca,'ylim',[-1000 1000]);
 hold off
 title('Single Phase Inverter: output current and voltage','Interpreter','latex','FontSize',fontsize_plotting);
 legend('$i_{s}^{ac}$','$u_{s}^{ac}$','Location','northwestoutside',...
@@ -200,7 +200,7 @@ ax = gca;
 ax.YColor = [0.5 0.5 0.5]; 
 plot(time_tc_sim,inverter_device_data_modA_sim(:,6),'-','LineWidth',tratto2,'Color',colore2);
 ylabel('$p/W$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[100 2000]);
+% set(gca,'ylim',[100 2000]);
 hold off
 title('Single Phase Inverter: Q1/Q2 devices power loss','Interpreter','latex','FontSize',fontsize_plotting);
 legend('$p_{Q_1}$','$p_{Q_2}$','Location','northwestoutside',...
@@ -219,7 +219,7 @@ figure(5);
 subplot 211
 plot(time_tc_sim,inverter_device_data_modA_sim(:,2),'-','LineWidth',tratto1,'Color',colore1);
 ylabel('$u/V$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[-50 1000]);
+% set(gca,'ylim',[-50 1000]);
 title('Single Phase Inverter: Q1 voltage','Interpreter','latex','FontSize',fontsize_plotting);
 legend('$u_{Q_1}$','Location','northwestoutside',...
     'Interpreter','latex','FontSize',fontsize_plotting);
@@ -246,7 +246,7 @@ figure(6);
 subplot 211
 plot(time_tc_sim,inverter_device_data_modA_sim(:,7),'-','LineWidth',tratto1,'Color',colore1);
 ylabel('$u/V$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[-50 1000]);
+% set(gca,'ylim',[-50 1000]);
 title('Single Phase Inverter: Q2 voltage','Interpreter','latex','FontSize',fontsize_plotting);
 legend('$u_{Q_2}$','Location','northwestoutside',...
     'Interpreter','latex','FontSize',fontsize_plotting);
@@ -255,7 +255,7 @@ set(gca,'xlim',[t5s t6s]);
 subplot 212
 plot(time_tc_sim,inverter_device_data_modA_sim(:,8),'-','LineWidth',tratto1,'Color',colore1);
 ylabel('$i/A$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[-1600 1600]);
+% set(gca,'ylim',[-1600 1600]);
 legend('$i_{Q_2}$','Location','northwestoutside',...
     'Interpreter','latex','FontSize',fontsize_plotting);
 xlabel('$t/s$','Interpreter','latex','FontSize', fontsize_plotting);
@@ -273,7 +273,7 @@ figure(7);
 subplot 211
 plot(time_tc_sim,inverter_1_dab_devices_data_modA_sim(:,1),'-','LineWidth',tratto1,'Color',colore1);
 ylabel('$p/W$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[185 200]);
+% set(gca,'ylim',[185 200]);
 set(gca,'xlim',[t1s t2s]);
 title('DAB primary side: Q1 power loss','Interpreter','latex','FontSize',fontsize_plotting);
 legend('$p_{Q_1}$','Location','northwestoutside',...
@@ -285,7 +285,7 @@ ax = gca;
 ax.YColor = [0.25 0.25 0.25]; 
 plot(time_tc_sim,inverter_1_dab_devices_data_modA_sim(:,2),'-','LineWidth',tratto1,'Color',colore1);
 ylabel('$u/V$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[-50 1750]);
+% set(gca,'ylim',[-50 1750]);
 xlabel('$t/s$','Interpreter','latex','FontSize', fontsize_plotting);
 set(gca,'xlim',[t5c t6c]);
 yyaxis right;
@@ -296,7 +296,7 @@ ylabel('$i/A$','Interpreter','latex','FontSize', fontsize_plotting);
 legend('$u_{Q_1}$','$i_{Q_1}$','Location','northwestoutside',...
     'Interpreter','latex','FontSize',fontsize_plotting);
 title('DAB primary side: Q1 voltage and current','Interpreter','latex','FontSize',fontsize_plotting);
-set(gca,'ylim',[-1000 200]);
+% set(gca,'ylim',[-1000 200]);
 grid on
 h=gcf;
 set(h,'PaperOrientation','landscape');
@@ -310,7 +310,7 @@ figure(8);
 subplot 211
 plot(time_tc_sim,inverter_1_dab_devices_data_modA_sim(:,6),'-','LineWidth',tratto1,'Color',colore1);
 ylabel('$p/W$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[185 200]);
+% set(gca,'ylim',[185 200]);
 set(gca,'xlim',[t1s t2s]);
 title('DAB primary side: Q2 power loss','Interpreter','latex','FontSize',fontsize_plotting);
 legend('$p_{Q_2}$','Location','northwestoutside',...
@@ -322,7 +322,7 @@ ax = gca;
 ax.YColor = [0.25 0.25 0.25]; 
 plot(time_tc_sim,inverter_1_dab_devices_data_modA_sim(:,7),'-','LineWidth',tratto1,'Color',colore1);
 ylabel('$u/V$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[-50 1750]);
+% set(gca,'ylim',[-50 1750]);
 xlabel('$t/s$','Interpreter','latex','FontSize', fontsize_plotting);
 set(gca,'xlim',[t5c t6c]);
 yyaxis right;
@@ -333,7 +333,7 @@ ylabel('$i/A$','Interpreter','latex','FontSize', fontsize_plotting);
 legend('$u_{Q_2}$','$i_{Q_2}$','Location','northwestoutside',...
     'Interpreter','latex','FontSize',fontsize_plotting);
 title('DAB primary side: Q2 voltage and current','Interpreter','latex','FontSize',fontsize_plotting);
-set(gca,'ylim',[-1000 200]);
+% set(gca,'ylim',[-1000 200]);
 grid on
 h=gcf;
 set(h,'PaperOrientation','landscape');
@@ -346,7 +346,7 @@ figure(9);
 subplot 211
 plot(time_tc_sim,inverter_2_dab_devices_data_modA_sim(:,1),'-','LineWidth',tratto1,'Color',colore1);
 ylabel('$p/W$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[325 335]);
+% set(gca,'ylim',[325 335]);
 set(gca,'xlim',[t1s t2s]);
 title('DAB secondary side: Q1 power loss','Interpreter','latex','FontSize',fontsize_plotting);
 legend('$p_{Q_1}$','Location','northwestoutside',...
@@ -367,7 +367,7 @@ ax = gca;
 ax.YColor = [0.5 0.5 0.5]; 
 plot(time_tc_sim,inverter_2_dab_devices_data_modA_sim(:,3),'-','LineWidth',tratto1,'Color',colore2);
 ylabel('$i/A$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[-200 1000]);
+% set(gca,'ylim',[-200 1000]);
 grid on
 legend('$u_{Q_1}$','$i_{Q_1}$','Location','northwestoutside',...
     'Interpreter','latex','FontSize',fontsize_plotting);
@@ -386,7 +386,7 @@ figure(10);
 subplot 211
 plot(time_tc_sim,inverter_2_dab_devices_data_modA_sim(:,6),'-','LineWidth',tratto1,'Color',colore1);
 ylabel('$p/W$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[320 330]);
+% set(gca,'ylim',[320 330]);
 set(gca,'xlim',[t1s t2s]);
 title('DAB secondary side: Q2 power loss','Interpreter','latex','FontSize',fontsize_plotting);
 legend('$p_{Q_2}$','Location','northwestoutside',...
@@ -398,7 +398,7 @@ ax = gca;
 ax.YColor = [0.25 0.25 0.25]; 
 plot(time_tc_sim,inverter_2_dab_devices_data_modA_sim(:,7),'-','LineWidth',tratto1,'Color',colore1);
 ylabel('$u/V$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[-50 1750]);
+% set(gca,'ylim',[-50 1750]);
 xlabel('$t/s$','Interpreter','latex','FontSize', fontsize_plotting);
 set(gca,'xlim',[t5c t6c]);
 yyaxis right;
@@ -406,7 +406,7 @@ ax = gca;
 ax.YColor = [0.5 0.5 0.5]; 
 plot(time_tc_sim,inverter_2_dab_devices_data_modA_sim(:,8),'-','LineWidth',tratto1,'Color',colore2);
 ylabel('$i/A$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[-200 1000]);
+% set(gca,'ylim',[-200 1000]);
 grid on
 legend('$u_{Q_2}$','$i_{Q_2}$','Location','northwestoutside',...
     'Interpreter','latex','FontSize',fontsize_plotting);
