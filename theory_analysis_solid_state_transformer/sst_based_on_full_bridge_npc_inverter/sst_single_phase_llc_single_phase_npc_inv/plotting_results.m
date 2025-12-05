@@ -30,7 +30,7 @@ colororder({'k','k'})
 yyaxis left;
 plot(time_tc_sim,dab_current_output_modA_sim,'-','LineWidth',tratto1,'Color',colore1);
 ylabel('$i/A$','Interpreter','latex','FontSize', fontsize_plotting);
-set(gca,'ylim',[-1000 1000]);
+% set(gca,'ylim',[-1000 1000]);
 hold on
 yyaxis right;
 ax = gca;
@@ -51,7 +51,7 @@ yyaxis left;
 plot(time_tc_sim,dab_current_input_modA_sim,'-','LineWidth',tratto1,'Color',colore1);
 ylabel('$i/A$','Interpreter','latex','FontSize', fontsize_plotting);
 hold on
-set(gca,'ylim',[-400 0]);
+% set(gca,'ylim',[-400 0]);
 yyaxis right;
 ax = gca;
 ax.YColor = [0.5 0.5 0.5]; 
