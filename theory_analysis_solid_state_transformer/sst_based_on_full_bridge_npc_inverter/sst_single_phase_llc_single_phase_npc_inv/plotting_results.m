@@ -1,8 +1,8 @@
-clear all
+% clear all
 close all
 clc
 
-load sim_result_1.mat
+% load sim_result_temp2.mat
 
 tratto1=2.5;
 tratto2=2.5;
@@ -12,12 +12,12 @@ colore2 = [0.5 0.5 0.5];
 colore3 = [0.75 0.75 0.75];
 t1c = time_tc_sim(end) - Nc*tc/2000;
 t2c = time_tc_sim(end);
-t1s = time_ts_dab_modA_sim(end) - (Ns_dab*ts_dab/10);
-t2s = time_ts_dab_modA_sim(end);
-t3s = time_ts_dab_modA_sim(end) - (Ns_dab*ts_dab/10);
-t4s = time_ts_dab_modA_sim(end);
-t5s = time_ts_dab_modA_sim(end) - (Ns_dab*ts_dab/20);
-t6s = time_ts_dab_modA_sim(end);
+t1s = time_ts_dab_sim(end) - (Ns_dab*ts_dab/10);
+t2s = time_ts_dab_sim(end);
+t3s = time_ts_dab_sim(end) - (Ns_dab*ts_dab/10);
+t4s = time_ts_dab_sim(end);
+t5s = time_ts_dab_sim(end) - (Ns_dab*ts_dab/20);
+t6s = time_ts_dab_sim(end);
 t3c = time_tc_sim(end) - (Nc*tc/1000);
 t4c = time_tc_sim(end);
 t5c = time_tc_sim(end) - (Nc*tc/2000);

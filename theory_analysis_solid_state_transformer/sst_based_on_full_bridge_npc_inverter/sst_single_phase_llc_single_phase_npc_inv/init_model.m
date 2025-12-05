@@ -30,7 +30,7 @@ fPWM_DAB = fPWM*5; % PWM frequency
 tPWM_DAB = 1/fPWM_DAB;
 half_phase_pulses = 1/fPWM_DAB/2;
 
-fPWM_LLC_pu = 0.5;
+fPWM_LLC_pu = 0.65;
 fPWM_LLC = fPWM_LLC_pu*fPWM_DAB %[output:8141aa1d]
 
 TRGO_double_update = 0;
@@ -103,7 +103,7 @@ RCFi_dc2_internal = 1e-3;
 %[text] #### Tank LC and HF-Transformer parameters
 % LLC
 fres = fPWM_DAB;
-Ls = (Vdab1_dc_nom^2/(2*pi*fres)/Pnom*pi/8) %[output:3903d2b4]
+Ls = (Vdab1_dc_nom^2/(2*pi*fPWM_DAB)/Pnom*pi/4) %[output:3903d2b4]
 Cs = 1/Ls/(2*pi*fres)^2 %[output:0f15b374]
 
 m1 = 12;
@@ -485,7 +485,7 @@ end
 %   data: {"layout":"onright","rightPanelPercent":47.6}
 %---
 %[output:8141aa1d]
-%   data: {"dataType":"textualVariable","outputData":{"name":"fPWM_LLC","value":"       10000"}}
+%   data: {"dataType":"textualVariable","outputData":{"name":"fPWM_LLC","value":"       13000"}}
 %---
 %[output:673f9826]
 %   data: {"dataType":"textualVariable","outputData":{"name":"Idc_FS","value":"     4.583333333333334e+02"}}
@@ -494,10 +494,10 @@ end
 %   data: {"dataType":"textualVariable","outputData":{"name":"Vdc_FS","value":"     9.375000000000000e+02"}}
 %---
 %[output:3903d2b4]
-%   data: {"dataType":"textualVariable","outputData":{"name":"Ls","value":"     6.392045454545454e-06"}}
+%   data: {"dataType":"textualVariable","outputData":{"name":"Ls","value":"     1.278409090909091e-05"}}
 %---
 %[output:0f15b374]
-%   data: {"dataType":"textualVariable","outputData":{"name":"Cs","value":"     9.906960178361916e-06"}}
+%   data: {"dataType":"textualVariable","outputData":{"name":"Cs","value":"     4.953480089180958e-06"}}
 %---
 %[output:7b4951a3]
 %   data: {"dataType":"textualVariable","outputData":{"name":"Vac_FS","value":"     3.919183588453085e+02"}}
