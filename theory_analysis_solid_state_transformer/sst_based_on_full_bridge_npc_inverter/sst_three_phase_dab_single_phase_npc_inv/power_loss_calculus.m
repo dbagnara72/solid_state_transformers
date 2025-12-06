@@ -1,19 +1,25 @@
 % clear all
-% close all
+close all
 clc
+% load sim_result_1.mat;
 
-% load sim_result_3.mat;
-idc_grid = mean(current_battery_sim);
-udc_grid = mean(voltage_battery_sim);
+
+
+N2 = Nc;
+N1 = N2 - floor(0.5/tc);
+% figure; plot(time_tc_sim(N1:N2), inverter_device_data_modA_sim(N1:N2,6)); grid on
+
+idc_grid = mean(current_battery_sim(N1:N2));
+udc_grid = mean(voltage_battery_sim(N1:N2));
 p_dc_grid = idc_grid*udc_grid
 
-p_loss_dab1_Q1 = mean(inverter_1_dab_devices_data_modA_sim(:,1));
-p_loss_dab1_Q2 = mean(inverter_1_dab_devices_data_modA_sim(:,6));
-p_loss_dab2_Q1 = mean(inverter_2_dab_devices_data_modA_sim(:,1));
-p_loss_dab2_Q2 = mean(inverter_2_dab_devices_data_modA_sim(:,6));
+p_loss_dab1_Q1 = mean(inverter_1_dab_devices_data_modA_sim(N1:N2,1));
+p_loss_dab1_Q2 = mean(inverter_1_dab_devices_data_modA_sim(N1:N2,6));
+p_loss_dab2_Q1 = mean(inverter_2_dab_devices_data_modA_sim(N1:N2,1));
+p_loss_dab2_Q2 = mean(inverter_2_dab_devices_data_modA_sim(N1:N2,6));
 
-p_loss_afe_Q1 = mean(inverter_device_data_modA_sim(:,1));
-p_loss_afe_Q2 = mean(inverter_device_data_modA_sim(:,6));
+p_loss_afe_Q1 = mean(inverter_device_data_modA_sim(N1:N2,1));
+p_loss_afe_Q2 = mean(inverter_device_data_modA_sim(N1:N2,6));
 
 p_loss_dab = 3*(p_loss_dab1_Q1+p_loss_dab1_Q2) + 3*(p_loss_dab2_Q1+p_loss_dab2_Q2)
 p_loss_inv = 4*(p_loss_afe_Q1+p_loss_afe_Q2)
