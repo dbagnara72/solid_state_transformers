@@ -22,7 +22,7 @@ p_loss_dab2_Q2 = mean(inverter_2_dab_devices_data_modA_sim(N1:N2,6));
 p_loss_afe_Q1 = mean(inverter_device_data_modA_sim(N1:N2,1));
 p_loss_afe_Q2 = mean(inverter_device_data_modA_sim(N1:N2,6));
 
-p_loss_dab = 2*(p_loss_dab1_Q1+p_loss_dab1_Q2) + 2*(  a b2_Q1+p_loss_dab2_Q2)
+p_loss_dab = 2*(p_loss_dab1_Q1+p_loss_dab1_Q2) + 2*(p_loss_dab2_Q1+p_loss_dab2_Q2)
 p_loss_inv = 4*(p_loss_afe_Q1+p_loss_afe_Q2)
 
 ac_grid_voltage_rms = sqrt(mean(ac_grid_voltage_sim.^2))
